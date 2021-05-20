@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="API.Views.Maestro"
+             Title="Maestro">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="DarkGray">
+            <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
+                <Frame BackgroundColor="White" HeightRequest="400" HasShadow="True" Padding="0" Margin="0">
+                    <StackLayout>
+                        <StackLayout Margin="10">
+                            <Label Text="TIENDA ****" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <StackLayout Padding="0" Margin="15,10">
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                        <Image Source="avatar.png" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+                                    <Button Text="Login" Clicked="IrLogin"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -8,11 +8,15 @@ using Xamarin.Forms;
 
 namespace API
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : MasterDetailPage
     {
         public MainPage()
         {
             InitializeComponent();
+            this.Master = new Maestro();
+            this.Detail = new NavigationPage(new Detalle());
+
+            App.MasterD = this;
         }
 
         

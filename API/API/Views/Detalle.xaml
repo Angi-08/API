@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:ViewModels="clr-namespace:API.ViewModels"
+             x:Class="API.Views.PersonaPage">
+    <ContentPage.BindingContext>
+        <ViewModels:ProductoViewModels></ViewModels:ProductoViewModels>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <ScrollView>
+            <Grid>
+            
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <ScrollView Grid.Row="0">
+                    <StackLayout>
+                        <SearchBar x:Name="busqueda"
+                           Placeholder="Ingrese el nombre del producto..."
+                           TextChanged="Busqueda"   
+                           CancelButtonColor="#F03280"
+                           PlaceholderColor="#F03280"
+                           TextColor="#F03280"
+                           TextTransform="Lowercase"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Medium"
+                           FontAttributes="Italic"/>
+
+                        <StackLayout>
+                            <Frame HeightRequest="200" BorderColor="Black">
+                                <StackLayout>
+                                    <ListView ItemsSource="{Binding PersonasList}">
+                                        <ListView.Header>
+                                            <StackLayout>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="30"/>
+                                                        <ColumnDefinition Width="30"/>
+                                                        <ColumnDefinition Width="30"/>
+                                                        <ColumnDefinition Width="30"/>
+                                                        <ColumnDefinition Width="30"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Grid.Column="0" Text="Nombres"/>
+                                                    <Label Grid.Column="1" Text="Apellidoss"/>
+                                                    <Label Grid.Column="2" Text="Año de nacimiento"/>
+                                                    <Label Grid.Column="3" Text="Celular"/>
+                                                    <Label Grid.Column="4" Text="Direccion"/>
+                                                </Grid>
+                                            </StackLayout>
+                                        </ListView.Header>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="auto"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="30"/>
+                                                            <ColumnDefinition Width="30"/>
+                                                            <ColumnDefinition Width="30"/>
+                                                            <ColumnDefinition Width="30"/>
+                                                            <ColumnDefinition Width="30"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label Grid.Column="0" Text="{Binding Nombre}"/>
+                                                        <Label Grid.Column="1" Text="{Binding Descripcion}"/>
+                                                        <Label Grid.Column="2" Text="{Binding Precio}"/>
+                                                    </Grid>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+z
+                </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

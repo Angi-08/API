@@ -7,11 +7,12 @@ namespace API
 {
     public partial class App : Application
     {
+        public static MasterDetailPage MasterD { get; set; }
         public App()
         {
             InitializeComponent();
 
-            MainPage = new PersonaPage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
